@@ -1,0 +1,1354 @@
+{
+  "schema_version": 2,
+  "outline_section": "2.8",
+  "generated_at_utc": "2026-10-25T22:04:27.761148Z",
+  "binding": {
+    "runtime_sources": {
+      "src/ich_dynamic/sensitivity_analysis.py": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\src\\ich_dynamic\\sensitivity_analysis.py",
+        "sha256": "802235031d5b5f5f841234127df682f11238b618a29cb98c02fe2d14e54ea4d0"
+      },
+      "src/ich_dynamic/models.py": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\src\\ich_dynamic\\models.py",
+        "sha256": "4546663838db07fe28568bf55803eadfe8e23d3284810fc5158522b3e9fda7c2"
+      },
+      "src/ich_dynamic/train_evaluate.py": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\src\\ich_dynamic\\train_evaluate.py",
+        "sha256": "36d0e62d229a18b894e09fa338bcdce179966765304ce1082ff6293d07d5341c"
+      },
+      "src/ich_dynamic/common.py": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\src\\ich_dynamic\\common.py",
+        "sha256": "3e13062dd40395f8035a9e360999beef2da17651f1df40463aac8b110bcd5b87"
+      },
+      "work/run_sensitivity_frozen.py": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\run_sensitivity_frozen.py",
+        "sha256": "57cb28e2a8edf8581d3254b1eda4e59394e723c92af9ca3e86d25e86634d5f7e"
+      }
+    },
+    "config": {
+      "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\configs\\study.json",
+      "sha256": "93392c1477a03579fe099af75bcf69b149937d7181602ed96906e73d4db9d5b1"
+    },
+    "data": {
+      "mimic4/cohort_pre_filter.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic4\\cohort_pre_filter.csv",
+        "sha256": "a0aa3c47557eab4580430b16c0b6aca826344215fe75223fadd4c9859c2ea75a"
+      },
+      "mimic4/gcs_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic4\\gcs_events.csv",
+        "sha256": "ef52c8eba8e2f78c5d05ca0324c2ee5fa6e539acb0b801e98bfe3910d99ec139"
+      },
+      "mimic4/rass_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic4\\rass_events.csv",
+        "sha256": "2b5dfe465c8d2f9cb8d85bdeb32a620dfb3d36de522b3382f0f1d1ee8f3bb11c"
+      },
+      "mimic3/cohort_pre_filter.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic3\\cohort_pre_filter.csv",
+        "sha256": "3bcfdb817968ff7c08a2b8a46e397f428b65b8a570ae7304795a2ac86994c8cf"
+      },
+      "mimic3/gcs_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic3\\gcs_events.csv",
+        "sha256": "2fe677bf838fc8c495c848cbd99806586b0d7f9a2ff0fd8532ce983f63f860b6"
+      },
+      "mimic3/rass_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\mimic3\\rass_events.csv",
+        "sha256": "67db36bf3fb1ca7763caea3dd131717333213ffc66034e14ba3a3fd20e6f5e5d"
+      },
+      "eicu/cohort_pre_filter.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\eicu\\cohort_pre_filter.csv",
+        "sha256": "f36d687ea5707b18c944e1f6b0beb6141a375a6bfc729a02d2e43167556470f1"
+      },
+      "eicu/gcs_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\eicu\\gcs_events.csv",
+        "sha256": "46a234aee8aee495bd5fbf776102d25ef327f9bdcef29d6d6525816e1524662a"
+      },
+      "eicu/rass_events.csv": {
+        "path": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\data\\processed\\eicu\\rass_events.csv",
+        "sha256": "4495675d9478d6840e22ff8cf7ed1acd4c5f8c4fff9d0d6ec34131d07d0385c4"
+      }
+    }
+  },
+  "datasets": {
+    "mimic4": [
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_max",
+          "variant_title": "Maximum pre-landmark GCS",
+          "prespecification": "Baseline is the maximum total GCS from ICU hour 0 to the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_max",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_last",
+          "variant_title": "Final pre-landmark GCS",
+          "prespecification": "Baseline is the final total GCS recorded before the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "last",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_last",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_1h",
+          "variant_title": "At least one low hourly observation",
+          "prespecification": "A >=2-point reduction is confirmed by one low GCS observation.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 1,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_1h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_2h",
+          "variant_title": "At least two consecutive hourly hours",
+          "prespecification": "A >=2-point reduction must be present in two adjacent hourly GCS medians.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_2h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "variant_title": "Exclude GCS observations in continuous sedation windows",
+          "prespecification": "RASS <= -2 in two hourly observations separated by one to two hours defines a continuous sedation window; all GCS observations inside that window are excluded before endpoint reconstruction.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "exclude_windows",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_unsedated_only",
+          "variant_title": "Restrict to the unsedated subgroup",
+          "prespecification": "Patients with no RASS <= -2 observation through ICU hour 72 are included; patients without observed RASS are not classified as unsedated.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "unsedated_only",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_unsedated_only",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_exclude",
+          "variant_title": "Exclude early live ICU transfers",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are excluded.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "exclude",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_exclude",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_grade0",
+          "variant_title": "Code early live ICU transfers as grade 0",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are retained and assigned grade 0 regardless of their observed pre-transfer trajectory. The primary analysis instead keeps the grade observed in the available post-landmark window.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "grade0",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_grade0",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_ipw",
+          "variant_title": "Inverse-probability weighting for early ICU transfer",
+          "prespecification": "Complete-follow-up observations are weighted by the stabilized inverse probability of remaining under observation through 72 h. The propensity model uses only prespecified pre-landmark covariates.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "ipw",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_ipw",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_with_intubation",
+          "variant_title": "Composite endpoint includes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is grade 2, in addition to GCS decline and death.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": true,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_with_intubation",
+          "dataset": "mimic4",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_without_intubation",
+          "variant_title": "GCS/death endpoint excludes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is ignored; GCS decline and death are retained.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_without_intubation",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_6h",
+          "variant_title": "6 h landmark",
+          "prespecification": "Baseline and input sequence end at 6 h; deterioration is ascertained from 6 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 6,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_6h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 6 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_24h",
+          "variant_title": "24 h landmark",
+          "prespecification": "Baseline and input sequence end at 24 h; deterioration is ascertained from 24 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_24h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 24 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_48h",
+          "variant_title": "48 h landmark",
+          "prespecification": "Baseline and input sequence end at 48 h; deterioration is ascertained from 48 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 48,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_48h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 48 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "7",
+          "analysis_title": "Exclusion of deaths within 72 hours",
+          "scenario_id": "s7_exclude_death72h",
+          "variant_title": "Exclude deaths within 72 h",
+          "prespecification": "Patients who die at or before ICU hour 72 are excluded from both endpoint ascertainment and model fitting.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": true,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s7_exclude_death72h",
+          "dataset": "mimic4",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "variant_title": "eICU GCS without RASS adjustment",
+          "prespecification": "The recorded total GCS is used without a sedation correction.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "dataset": "mimic4",
+          "support": "not_applicable",
+          "model_run_allowed": false,
+          "reason": "Outline analysis 8 applies only to eicu."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "variant_title": "eICU GCS with RASS adjustment",
+          "prespecification": "Requires an explicit contemporaneous GCS-RASS adjustment field. Imputed hourly RASS is not an acceptable substitute.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": true
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "dataset": "mimic4",
+          "support": "not_applicable",
+          "model_run_allowed": false,
+          "reason": "Outline analysis 8 applies only to eicu."
+        }
+      }
+    ],
+    "mimic3": [
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_max",
+          "variant_title": "Maximum pre-landmark GCS",
+          "prespecification": "Baseline is the maximum total GCS from ICU hour 0 to the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_max",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_last",
+          "variant_title": "Final pre-landmark GCS",
+          "prespecification": "Baseline is the final total GCS recorded before the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "last",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_last",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_1h",
+          "variant_title": "At least one low hourly observation",
+          "prespecification": "A >=2-point reduction is confirmed by one low GCS observation.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 1,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_1h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_2h",
+          "variant_title": "At least two consecutive hourly hours",
+          "prespecification": "A >=2-point reduction must be present in two adjacent hourly GCS medians.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_2h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "variant_title": "Exclude GCS observations in continuous sedation windows",
+          "prespecification": "RASS <= -2 in two hourly observations separated by one to two hours defines a continuous sedation window; all GCS observations inside that window are excluded before endpoint reconstruction.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "exclude_windows",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "dataset": "mimic3",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Event-level RASS covers only 29.4% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_unsedated_only",
+          "variant_title": "Restrict to the unsedated subgroup",
+          "prespecification": "Patients with no RASS <= -2 observation through ICU hour 72 are included; patients without observed RASS are not classified as unsedated.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "unsedated_only",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_unsedated_only",
+          "dataset": "mimic3",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Event-level RASS covers only 29.4% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_exclude",
+          "variant_title": "Exclude early live ICU transfers",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are excluded.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "exclude",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_exclude",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_grade0",
+          "variant_title": "Code early live ICU transfers as grade 0",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are retained and assigned grade 0 regardless of their observed pre-transfer trajectory. The primary analysis instead keeps the grade observed in the available post-landmark window.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "grade0",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_grade0",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_ipw",
+          "variant_title": "Inverse-probability weighting for early ICU transfer",
+          "prespecification": "Complete-follow-up observations are weighted by the stabilized inverse probability of remaining under observation through 72 h. The propensity model uses only prespecified pre-landmark covariates.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "ipw",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_ipw",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_with_intubation",
+          "variant_title": "Composite endpoint includes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is grade 2, in addition to GCS decline and death.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": true,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_with_intubation",
+          "dataset": "mimic3",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_without_intubation",
+          "variant_title": "GCS/death endpoint excludes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is ignored; GCS decline and death are retained.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_without_intubation",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_6h",
+          "variant_title": "6 h landmark",
+          "prespecification": "Baseline and input sequence end at 6 h; deterioration is ascertained from 6 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 6,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_6h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 6 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_24h",
+          "variant_title": "24 h landmark",
+          "prespecification": "Baseline and input sequence end at 24 h; deterioration is ascertained from 24 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_24h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 24 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_48h",
+          "variant_title": "48 h landmark",
+          "prespecification": "Baseline and input sequence end at 48 h; deterioration is ascertained from 48 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 48,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_48h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 48 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "7",
+          "analysis_title": "Exclusion of deaths within 72 hours",
+          "scenario_id": "s7_exclude_death72h",
+          "variant_title": "Exclude deaths within 72 h",
+          "prespecification": "Patients who die at or before ICU hour 72 are excluded from both endpoint ascertainment and model fitting.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": true,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s7_exclude_death72h",
+          "dataset": "mimic3",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "variant_title": "eICU GCS without RASS adjustment",
+          "prespecification": "The recorded total GCS is used without a sedation correction.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "dataset": "mimic3",
+          "support": "not_applicable",
+          "model_run_allowed": false,
+          "reason": "Outline analysis 8 applies only to eicu."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "variant_title": "eICU GCS with RASS adjustment",
+          "prespecification": "Requires an explicit contemporaneous GCS-RASS adjustment field. Imputed hourly RASS is not an acceptable substitute.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": true
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "dataset": "mimic3",
+          "support": "not_applicable",
+          "model_run_allowed": false,
+          "reason": "Outline analysis 8 applies only to eicu."
+        }
+      }
+    ],
+    "eicu": [
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_max",
+          "variant_title": "Maximum pre-landmark GCS",
+          "prespecification": "Baseline is the maximum total GCS from ICU hour 0 to the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_max",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "1",
+          "analysis_title": "Alternative baseline GCS definition",
+          "scenario_id": "s1_baseline_last",
+          "variant_title": "Final pre-landmark GCS",
+          "prespecification": "Baseline is the final total GCS recorded before the 24 h landmark.",
+          "dataset_scope": "all",
+          "baseline_mode": "last",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s1_baseline_last",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_1h",
+          "variant_title": "At least one low hourly observation",
+          "prespecification": "A >=2-point reduction is confirmed by one low GCS observation.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 1,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_1h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "2",
+          "analysis_title": "Alternative persistence threshold",
+          "scenario_id": "s2_persistence_2h",
+          "variant_title": "At least two consecutive hourly hours",
+          "prespecification": "A >=2-point reduction must be present in two adjacent hourly GCS medians.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s2_persistence_2h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "variant_title": "Exclude GCS observations in continuous sedation windows",
+          "prespecification": "RASS <= -2 in two hourly observations separated by one to two hours defines a continuous sedation window; all GCS observations inside that window are excluded before endpoint reconstruction.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "exclude_windows",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_exclude_continuous_sedation",
+          "dataset": "eicu",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Event-level RASS covers only 33.3% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "3",
+          "analysis_title": "Sedation handling",
+          "scenario_id": "s3_unsedated_only",
+          "variant_title": "Restrict to the unsedated subgroup",
+          "prespecification": "Patients with no RASS <= -2 observation through ICU hour 72 are included; patients without observed RASS are not classified as unsedated.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "unsedated_only",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s3_unsedated_only",
+          "dataset": "eicu",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Event-level RASS covers only 33.3% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_exclude",
+          "variant_title": "Exclude early live ICU transfers",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are excluded.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "exclude",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_exclude",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_grade0",
+          "variant_title": "Code early live ICU transfers as grade 0",
+          "prespecification": "Alive patients transferred out of the ICU before 72 h are retained and assigned grade 0 regardless of their observed pre-transfer trajectory. The primary analysis instead keeps the grade observed in the available post-landmark window.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "grade0",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_grade0",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "4",
+          "analysis_title": "Early ICU transfer censoring",
+          "scenario_id": "s4_censor_ipw",
+          "variant_title": "Inverse-probability weighting for early ICU transfer",
+          "prespecification": "Complete-follow-up observations are weighted by the stabilized inverse probability of remaining under observation through 72 h. The propensity model uses only prespecified pre-landmark covariates.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "ipw",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s4_censor_ipw",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_with_intubation",
+          "variant_title": "Composite endpoint includes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is grade 2, in addition to GCS decline and death.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": true,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_with_intubation",
+          "dataset": "eicu",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "5",
+          "analysis_title": "Unplanned intubation in the composite endpoint",
+          "scenario_id": "s5_without_intubation",
+          "variant_title": "GCS/death endpoint excludes unplanned intubation",
+          "prespecification": "Unplanned intubation after the landmark is ignored; GCS decline and death are retained.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s5_without_intubation",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_6h",
+          "variant_title": "6 h landmark",
+          "prespecification": "Baseline and input sequence end at 6 h; deterioration is ascertained from 6 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 6,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_6h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 6 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_24h",
+          "variant_title": "24 h landmark",
+          "prespecification": "Baseline and input sequence end at 24 h; deterioration is ascertained from 24 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_24h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 24 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "6",
+          "analysis_title": "Landmark window",
+          "scenario_id": "s6_landmark_48h",
+          "variant_title": "48 h landmark",
+          "prespecification": "Baseline and input sequence end at 48 h; deterioration is ascertained from 48 to 72 h.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 48,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s6_landmark_48h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "Landmark-specific eligibility, sequence, and static inputs and the common 6 h predictor anchor were rebuilt without post-landmark leakage. 48 h target and 6 h predictor-anchor artifacts passed schema, hash, shape, identifier, outcome, and audit validation."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "7",
+          "analysis_title": "Exclusion of deaths within 72 hours",
+          "scenario_id": "s7_exclude_death72h",
+          "variant_title": "Exclude deaths within 72 h",
+          "prespecification": "Patients who die at or before ICU hour 72 are excluded from both endpoint ascertainment and model fitting.",
+          "dataset_scope": "all",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": true,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s7_exclude_death72h",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "variant_title": "eICU GCS without RASS adjustment",
+          "prespecification": "The recorded total GCS is used without a sedation correction.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": false
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_unadjusted",
+          "dataset": "eicu",
+          "support": "supported",
+          "model_run_allowed": true,
+          "reason": "All required fields and the 24 h prediction inputs are available."
+        }
+      },
+      {
+        "scenario": {
+          "analysis_id": "8",
+          "analysis_title": "eICU GCS adjustment for RASS",
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "variant_title": "eICU GCS with RASS adjustment",
+          "prespecification": "Requires an explicit contemporaneous GCS-RASS adjustment field. Imputed hourly RASS is not an acceptable substitute.",
+          "dataset_scope": "eicu",
+          "baseline_mode": "max",
+          "landmark_hours": 24,
+          "confirmation_consecutive_hours": 2,
+          "include_intubation": false,
+          "exclude_death_within_72h": false,
+          "sedation_strategy": "none",
+          "censoring_strategy": "primary",
+          "requires_rass_adjustment": true
+        },
+        "status": {
+          "scenario_id": "s8_eicu_gcs_rass_adjusted",
+          "dataset": "eicu",
+          "support": "unsupported",
+          "model_run_allowed": false,
+          "reason": "No complete explicit contemporaneous GCS-RASS adjustment field (gcs_rass_adjusted or adjusted_gcs) is present. Forward-filled hourly RASS is not a valid substitute."
+        }
+      }
+    ]
+  }
+}

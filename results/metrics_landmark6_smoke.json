@@ -1,0 +1,664 @@
+{
+  "development": {
+    "xgb_summary": {
+      "point": {
+        "n": 3236.0,
+        "macro_auc": 0.7386427473891137,
+        "auc_grade_0": 0.7484885574332971,
+        "auc_grade_1": 0.710969473331097,
+        "auc_grade_2": 0.7564702114029469,
+        "predicted_grade_0": 2902,
+        "predicted_grade_1": 185,
+        "predicted_grade_2": 149,
+        "confusion_matrix": [
+          [
+            2288,
+            86,
+            47
+          ],
+          [
+            207,
+            37,
+            11
+          ],
+          [
+            407,
+            62,
+            91
+          ]
+        ],
+        "mode_predicted_grade_0": 3030,
+        "mode_predicted_grade_1": 9,
+        "mode_predicted_grade_2": 197,
+        "mode_confusion_matrix": [
+          [
+            2355,
+            1,
+            65
+          ],
+          [
+            230,
+            6,
+            19
+          ],
+          [
+            445,
+            2,
+            113
+          ]
+        ],
+        "auc_any_deterioration": 0.7484885574332971,
+        "auc_severe_deterioration": 0.7564702114029469,
+        "accuracy": 0.7466007416563659,
+        "adjacent_class_misclassification_rate": 0.11310259579728059,
+        "non_adjacent_misclassification_rate": 0.14029666254635353,
+        "mean_absolute_ordinal_error": 0.3936959208899876,
+        "quadratic_weighted_kappa": 0.23853781875459268,
+        "mode_accuracy": 0.7645241038318912,
+        "mode_quadratic_weighted_kappa": 0.2229256520555678,
+        "multiclass_brier": 0.3505075664200201,
+        "log_loss": 0.6278547702393377,
+        "brier_any_deterioration": 0.15920570187483601,
+        "brier_severe_deterioration": 0.121901202703671,
+        "calibration_slope_any": 0.9436897698231865,
+        "calibration_intercept_any": -0.04551083476129081,
+        "calibration_slope_severe": 1.0025370084025576,
+        "calibration_intercept_severe": 0.015072477182152,
+        "calibration_slope_grade_0": 0.9436897698231864,
+        "calibration_slope_grade_1": 0.8487580165725196,
+        "calibration_slope_grade_2": 1.0025370084025576,
+        "calibration_intercept_grade_0": 0.0455108347612908,
+        "calibration_intercept_grade_1": -0.3358354715737787,
+        "calibration_intercept_grade_2": 0.015072477182152,
+        "expected_calibration_error": 0.012962835468975885,
+        "ece_any_deterioration": 0.012844038524065264,
+        "ece_severe_deterioration": 0.009082521567719853,
+        "dca_any": {
+          "thresholds": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.3500000000000001,
+            0.4
+          ],
+          "model": [
+            0.1792336217552534,
+            0.1465134879662619,
+            0.11518850432632881,
+            0.09177997527812115,
+            0.06983930778739181,
+            0.05386517067604826,
+            0.03811289658014008
+          ],
+          "treat_all": [
+            0.16872682323856614,
+            0.11982840107612883,
+            0.0648176761433869,
+            0.00247218788627937,
+            -0.06877979869327216,
+            -0.15099362936198552,
+            -0.24690976514215085
+          ],
+          "treat_none": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dca_severe": {
+          "thresholds": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.3500000000000001,
+            0.4
+          ],
+          "model": [
+            0.09929954676555416,
+            0.073002254053661,
+            0.05485166872682324,
+            0.04316028018129379,
+            0.034036729648596144,
+            0.02840638965484453,
+            0.023279769262463945
+          ],
+          "treat_all": [
+            0.0811701689328389,
+            0.027121355340652936,
+            -0.03368355995055622,
+            -0.10259579728059326,
+            -0.18135263994349288,
+            -0.27222591993914624,
+            -0.37824474660074164
+          ],
+          "treat_none": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "ci": {
+        "macro_auc": [
+          0.7267245537954892,
+          0.7510072038637158
+        ],
+        "auc_grade_0": [
+          0.7397683275449473,
+          0.7595542931637377
+        ],
+        "auc_grade_1": [
+          0.679211590296496,
+          0.728817551468342
+        ],
+        "auc_grade_2": [
+          0.7473998355977618,
+          0.7652849101392813
+        ],
+        "auc_any_deterioration": [
+          0.7397683275449474,
+          0.7595542931637376
+        ],
+        "auc_severe_deterioration": [
+          0.7473998355977618,
+          0.7652849101392813
+        ],
+        "accuracy": [
+          0.7337453646477132,
+          0.7529125463535229
+        ],
+        "adjacent_class_misclassification_rate": [
+          0.10699165636588381,
+          0.11766841779975278
+        ],
+        "non_adjacent_misclassification_rate": [
+          0.13782447466007416,
+          0.1497991347342398
+        ],
+        "mean_absolute_ordinal_error": [
+          0.3864570457354759,
+          0.41605377008652655
+        ],
+        "quadratic_weighted_kappa": [
+          0.21786544734338503,
+          0.2408725888616601
+        ],
+        "mode_accuracy": [
+          0.7473964771322621,
+          0.7699783683559951
+        ],
+        "mode_quadratic_weighted_kappa": [
+          0.1993044458343387,
+          0.22507073962498575
+        ],
+        "multiclass_brier": [
+          0.3395437612221005,
+          0.3662533344442344
+        ],
+        "log_loss": [
+          0.6081251874538988,
+          0.6537987166080191
+        ],
+        "brier_any_deterioration": [
+          0.15465048193903908,
+          0.16487267877697903
+        ],
+        "brier_severe_deterioration": [
+          0.11840992218348083,
+          0.12717843399118073
+        ],
+        "calibration_slope_any": [
+          0.9054249070261432,
+          1.0048698572758858
+        ],
+        "calibration_intercept_any": [
+          -0.10947666492159727,
+          0.060267897878420865
+        ],
+        "calibration_slope_severe": [
+          0.9518059836118623,
+          1.060122090653741
+        ],
+        "calibration_intercept_severe": [
+          -0.06596076698118453,
+          0.08791539583947458
+        ],
+        "calibration_slope_grade_0": [
+          0.9054249070261431,
+          1.0048698572758856
+        ],
+        "calibration_slope_grade_1": [
+          0.7014002882261142,
+          0.9781270773428469
+        ],
+        "calibration_slope_grade_2": [
+          0.9518059836118623,
+          1.060122090653741
+        ],
+        "calibration_intercept_grade_0": [
+          -0.06026789787842084,
+          0.10947666492159734
+        ],
+        "calibration_intercept_grade_1": [
+          -0.6316183046230855,
+          -0.046524485298534084
+        ],
+        "calibration_intercept_grade_2": [
+          -0.06596076698118453,
+          0.08791539583947458
+        ],
+        "expected_calibration_error": [
+          0.011355658794658366,
+          0.024882756704325062
+        ],
+        "ece_any_deterioration": [
+          0.012818592337660176,
+          0.025180076352821212
+        ],
+        "ece_severe_deterioration": [
+          0.01015980771034852,
+          0.023487590447645132
+        ]
+      },
+      "ci_validity": {
+        "requested_replicates": 10,
+        "clusters": 3236,
+        "metric_valid_replicates": {
+          "macro_auc": 10,
+          "auc_grade_0": 10,
+          "auc_grade_1": 10,
+          "auc_grade_2": 10,
+          "auc_any_deterioration": 10,
+          "auc_severe_deterioration": 10,
+          "accuracy": 10,
+          "adjacent_class_misclassification_rate": 10,
+          "non_adjacent_misclassification_rate": 10,
+          "mean_absolute_ordinal_error": 10,
+          "quadratic_weighted_kappa": 10,
+          "mode_accuracy": 10,
+          "mode_quadratic_weighted_kappa": 10,
+          "multiclass_brier": 10,
+          "log_loss": 10,
+          "brier_any_deterioration": 10,
+          "brier_severe_deterioration": 10,
+          "calibration_slope_any": 10,
+          "calibration_intercept_any": 10,
+          "calibration_slope_severe": 10,
+          "calibration_intercept_severe": 10,
+          "calibration_slope_grade_0": 10,
+          "calibration_slope_grade_1": 10,
+          "calibration_slope_grade_2": 10,
+          "calibration_intercept_grade_0": 10,
+          "calibration_intercept_grade_1": 10,
+          "calibration_intercept_grade_2": 10,
+          "expected_calibration_error": 10,
+          "ece_any_deterioration": 10,
+          "ece_severe_deterioration": 10
+        },
+        "minimum_metric_valid_replicates": 10,
+        "all_requested_replicates_valid": true
+      }
+    },
+    "dggru_tr": {
+      "point": {
+        "n": 3236.0,
+        "macro_auc": 0.7069793277137757,
+        "auc_grade_0": 0.7287056253690232,
+        "auc_grade_1": 0.6618518591603029,
+        "auc_grade_2": 0.7303804986120009,
+        "predicted_grade_0": 3101,
+        "predicted_grade_1": 134,
+        "predicted_grade_2": 1,
+        "confusion_matrix": [
+          [
+            2364,
+            57,
+            0
+          ],
+          [
+            243,
+            12,
+            0
+          ],
+          [
+            494,
+            65,
+            1
+          ]
+        ],
+        "mode_predicted_grade_0": 3211,
+        "mode_predicted_grade_1": 0,
+        "mode_predicted_grade_2": 25,
+        "mode_confusion_matrix": [
+          [
+            2413,
+            0,
+            8
+          ],
+          [
+            253,
+            0,
+            2
+          ],
+          [
+            545,
+            0,
+            15
+          ]
+        ],
+        "auc_any_deterioration": 0.7287056253690232,
+        "auc_severe_deterioration": 0.7303804986120009,
+        "accuracy": 0.734548825710754,
+        "adjacent_class_misclassification_rate": 0.11279357231149567,
+        "non_adjacent_misclassification_rate": 0.1526576019777503,
+        "mean_absolute_ordinal_error": 0.4181087762669963,
+        "quadratic_weighted_kappa": 0.07008161162959592,
+        "mode_accuracy": 0.7503090234857849,
+        "mode_quadratic_weighted_kappa": 0.03350008232525248,
+        "multiclass_brier": 0.3652263998438116,
+        "log_loss": 0.6553615266697158,
+        "brier_any_deterioration": 0.16523154893122072,
+        "brier_severe_deterioration": 0.12890534174924356,
+        "calibration_slope_any": 1.1165627969112657,
+        "calibration_intercept_any": 0.08238858333154585,
+        "calibration_slope_severe": 1.1726039254578917,
+        "calibration_intercept_severe": 0.21452587106118254,
+        "calibration_slope_grade_0": 1.1165627969112657,
+        "calibration_slope_grade_1": 1.0472934982964628,
+        "calibration_slope_grade_2": 1.1726039254578917,
+        "calibration_intercept_grade_0": -0.08238858333154599,
+        "calibration_intercept_grade_1": 0.08674355358015984,
+        "calibration_intercept_grade_2": 0.21452587106118254,
+        "expected_calibration_error": 0.014344097637020728,
+        "ece_any_deterioration": 0.015480884728348862,
+        "ece_severe_deterioration": 0.014504741936351302,
+        "dca_any": {
+          "thresholds": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.3500000000000001,
+            0.4
+          ],
+          "model": [
+            0.1749759648399945,
+            0.13969679342688868,
+            0.1136433868974042,
+            0.0915739596209312,
+            0.07045735475896164,
+            0.046258438718265626,
+            0.024824886691388534
+          ],
+          "treat_all": [
+            0.16872682323856614,
+            0.11982840107612883,
+            0.0648176761433869,
+            0.00247218788627937,
+            -0.06877979869327216,
+            -0.15099362936198552,
+            -0.24690976514215085
+          ],
+          "treat_none": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dca_severe": {
+          "thresholds": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.3500000000000001,
+            0.4
+          ],
+          "model": [
+            0.09545392116467519,
+            0.07007561986475677,
+            0.049057478368356,
+            0.03059332509270704,
+            0.01933604096768496,
+            0.013715888561376812,
+            0.0038112896580140077
+          ],
+          "treat_all": [
+            0.0811701689328389,
+            0.027121355340652936,
+            -0.03368355995055622,
+            -0.10259579728059326,
+            -0.18135263994349288,
+            -0.27222591993914624,
+            -0.37824474660074164
+          ],
+          "treat_none": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "ci": {
+        "macro_auc": [
+          0.6925286497556451,
+          0.7211895002056344
+        ],
+        "auc_grade_0": [
+          0.7150065406041736,
+          0.743691983326872
+        ],
+        "auc_grade_1": [
+          0.6406977300446555,
+          0.685620905505641
+        ],
+        "auc_grade_2": [
+          0.7186049525935604,
+          0.7450973774649526
+        ],
+        "auc_any_deterioration": [
+          0.7150065406041737,
+          0.7436919833268719
+        ],
+        "auc_severe_deterioration": [
+          0.7186049525935604,
+          0.7450973774649526
+        ],
+        "accuracy": [
+          0.7239493201483312,
+          0.7438195302843016
+        ],
+        "adjacent_class_misclassification_rate": [
+          0.10630407911001236,
+          0.11834826946847961
+        ],
+        "non_adjacent_misclassification_rate": [
+          0.14700247218788626,
+          0.16103213844252162
+        ],
+        "mean_absolute_ordinal_error": [
+          0.40318294190358467,
+          0.4364570457354759
+        ],
+        "quadratic_weighted_kappa": [
+          0.05253599008607126,
+          0.08369408426468025
+        ],
+        "mode_accuracy": [
+          0.7351514215080346,
+          0.7582663782447465
+        ],
+        "mode_quadratic_weighted_kappa": [
+          0.013718147193309119,
+          0.042721994467812364
+        ],
+        "multiclass_brier": [
+          0.35162034403691583,
+          0.38224708105020944
+        ],
+        "log_loss": [
+          0.6333907035898336,
+          0.6825535901330859
+        ],
+        "brier_any_deterioration": [
+          0.15946275396376972,
+          0.17167800608150094
+        ],
+        "brier_severe_deterioration": [
+          0.1255426851859852,
+          0.13471150915524377
+        ],
+        "calibration_slope_any": [
+          1.0317293444685491,
+          1.2101101390950113
+        ],
+        "calibration_intercept_any": [
+          0.015188027233288541,
+          0.1954806366953075
+        ],
+        "calibration_slope_severe": [
+          1.1067719202426913,
+          1.274782422798704
+        ],
+        "calibration_intercept_severe": [
+          0.12307835170624293,
+          0.3627202927561038
+        ],
+        "calibration_slope_grade_0": [
+          1.0317293444685491,
+          1.2101101390950113
+        ],
+        "calibration_slope_grade_1": [
+          0.8690669175852946,
+          1.2525348361039184
+        ],
+        "calibration_slope_grade_2": [
+          1.1067719202426913,
+          1.274782422798704
+        ],
+        "calibration_intercept_grade_0": [
+          -0.19548063669530752,
+          -0.015188027233288525
+        ],
+        "calibration_intercept_grade_1": [
+          -0.2766030447512564,
+          0.5419498146726817
+        ],
+        "calibration_intercept_grade_2": [
+          0.12307835170624293,
+          0.3627202927561038
+        ],
+        "expected_calibration_error": [
+          0.012683315218016087,
+          0.024895903607587307
+        ],
+        "ece_any_deterioration": [
+          0.013425806627797868,
+          0.02715365810619952
+        ],
+        "ece_severe_deterioration": [
+          0.009314445873919231,
+          0.018552261258264802
+        ]
+      },
+      "ci_validity": {
+        "requested_replicates": 10,
+        "clusters": 3236,
+        "metric_valid_replicates": {
+          "macro_auc": 10,
+          "auc_grade_0": 10,
+          "auc_grade_1": 10,
+          "auc_grade_2": 10,
+          "auc_any_deterioration": 10,
+          "auc_severe_deterioration": 10,
+          "accuracy": 10,
+          "adjacent_class_misclassification_rate": 10,
+          "non_adjacent_misclassification_rate": 10,
+          "mean_absolute_ordinal_error": 10,
+          "quadratic_weighted_kappa": 10,
+          "mode_accuracy": 10,
+          "mode_quadratic_weighted_kappa": 10,
+          "multiclass_brier": 10,
+          "log_loss": 10,
+          "brier_any_deterioration": 10,
+          "brier_severe_deterioration": 10,
+          "calibration_slope_any": 10,
+          "calibration_intercept_any": 10,
+          "calibration_slope_severe": 10,
+          "calibration_intercept_severe": 10,
+          "calibration_slope_grade_0": 10,
+          "calibration_slope_grade_1": 10,
+          "calibration_slope_grade_2": 10,
+          "calibration_intercept_grade_0": 10,
+          "calibration_intercept_grade_1": 10,
+          "calibration_intercept_grade_2": 10,
+          "expected_calibration_error": 10,
+          "ece_any_deterioration": 10,
+          "ece_severe_deterioration": 10
+        },
+        "minimum_metric_valid_replicates": 10,
+        "all_requested_replicates_valid": true
+      }
+    },
+    "comparisons_vs_primary": {
+      "xgb_summary": {
+        "delta_macro_auc": -0.031663419675338034,
+        "delta_auc_any": -0.01978293206427395,
+        "delta_auc_severe": -0.026089712790945963,
+        "nri_any_continuous": -0.04889961670818854,
+        "nri_severe_continuous": -0.05871862650119232,
+        "nri_any_categorical": -0.009961913015713697,
+        "nri_severe_categorical": -0.014061499039077496,
+        "idi_any": -0.04889961670818857,
+        "idi_severe": -0.05871862650119236,
+        "delong_any_delta": -0.01978293206427395,
+        "delong_any_z": -3.374058762125214,
+        "delong_any_p": 0.0007406855461407069,
+        "delong_severe_delta": -0.026089712790946074,
+        "delong_severe_z": -3.816714100928148,
+        "delong_severe_p": 0.0001352407246051346,
+        "delong_inference_status": "unclustered_standard_delong_secondary; group_bootstrap_is_primary",
+        "delong_any_p_holm": 0.006666169915266362,
+        "delong_severe_p_holm": 0.0013524072460513459,
+        "delong_holm_family": "fixed_five_outline_baselines_x_any_severe",
+        "inference_role": "primary_holm_family"
+      }
+    },
+    "paired_differences_vs_dggru_tr": {
+      "xgb_summary": [
+        -0.039761862283026056,
+        -0.024446011570886952
+      ]
+    },
+    "paired_differences_bootstrap_validity_vs_dggru_tr": {
+      "xgb_summary": {
+        "requested_replicates": 10,
+        "valid_replicates": 10,
+        "clusters": 3236,
+        "all_requested_replicates_valid": true
+      }
+    }
+  }
+}

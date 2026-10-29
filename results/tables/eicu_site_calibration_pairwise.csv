@@ -1,0 +1,17 @@
+endpoint,model,method,sites,sites_with_lower_ece,median_site_ece_change,median_updated_slope
+any_deterioration,xgb_summary,intercept_only,15,9,-0.0023105357398707227,1.0873521181166421
+any_deterioration,xgb_summary,slope_intercept,15,11,-0.0052612532005065354,0.9116946574257466
+any_deterioration,xgb_summary,logistic_recalibration,15,11,-0.008271885955633135,0.8797314356865467
+any_deterioration,xgb_summary,empirical_bayes,15,10,-0.0024162219297112347,1.0968020150903888
+any_deterioration,dggru_tr,intercept_only,15,12,-0.012041885280865444,1.1474467846011804
+any_deterioration,dggru_tr,slope_intercept,15,14,-0.031126539870373976,0.9290110009550139
+any_deterioration,dggru_tr,logistic_recalibration,15,13,-0.02571326845289429,0.8997004386077326
+any_deterioration,dggru_tr,empirical_bayes,15,10,-0.010514013761454444,1.2458021582840404
+severe_deterioration,xgb_summary,intercept_only,8,4,-0.0005613069845679178,1.2582805805027533
+severe_deterioration,xgb_summary,slope_intercept,8,5,-0.00276281563932795,0.926301478912716
+severe_deterioration,xgb_summary,logistic_recalibration,8,3,0.009683788067882691,0.8687759974062139
+severe_deterioration,xgb_summary,empirical_bayes,8,5,-0.005825461936175138,1.1708100480091599
+severe_deterioration,dggru_tr,intercept_only,8,6,-0.010888387574173083,0.8936030476422081
+severe_deterioration,dggru_tr,slope_intercept,8,7,-0.012421539376242817,0.9242721776205137
+severe_deterioration,dggru_tr,logistic_recalibration,8,7,-0.005661092998295231,0.9192357897387501
+severe_deterioration,dggru_tr,empirical_bayes,8,7,-0.011009418702836817,0.9453170374643548

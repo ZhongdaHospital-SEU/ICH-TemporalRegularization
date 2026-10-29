@@ -1,0 +1,278 @@
+[
+  {
+    "dataset": "MIMIC-IV v3.1",
+    "ich_i61_admissions": 2434,
+    "ich_i61_i62_admissions": 3160,
+    "ich_i61_icu_stays": 2201,
+    "ich_i61_patients": 2250,
+    "gcs_rows": 441849,
+    "gcs_patients": 2189,
+    "gcs_items": [
+      {
+        "itemid": 220739,
+        "label": "GCS - Eye Opening",
+        "abbreviation": "Eye Opening",
+        "category": "Neurological",
+        "unitname": null
+      },
+      {
+        "itemid": 223900,
+        "label": "GCS - Verbal Response",
+        "abbreviation": "Verbal Response",
+        "category": "Neurological",
+        "unitname": null
+      },
+      {
+        "itemid": 223901,
+        "label": "GCS - Motor Response",
+        "abbreviation": "Motor Response",
+        "category": "Neurological",
+        "unitname": null
+      },
+      {
+        "itemid": 226755,
+        "label": "GcsApacheIIScore",
+        "abbreviation": "GcsApacheIIScore",
+        "category": "Scores - APACHE II",
+        "unitname": "None"
+      },
+      {
+        "itemid": 228112,
+        "label": "GCSVerbalApacheIIValue (intubated)",
+        "abbreviation": "GCSVerbalApacheIIValue (intubated)",
+        "category": "Scores - APACHE II",
+        "unitname": null
+      }
+    ],
+    "sedation_items": [
+      {
+        "itemid": 224506,
+        "label": "Conscious sedation (THCEN)",
+        "abbreviation": "Conscious sedation (THCEN)",
+        "category": "Thoracentesis"
+      },
+      {
+        "itemid": 225531,
+        "label": "Conscious sedation used (Bronch)",
+        "abbreviation": "Conscious sedation used (Bronch)",
+        "category": "Bronchoscopy"
+      },
+      {
+        "itemid": 228060,
+        "label": "Conscious sedation used (Bronch)",
+        "abbreviation": "Conscious sedation used (Bronch)",
+        "category": "Bronchoscopy"
+      },
+      {
+        "itemid": 228096,
+        "label": "Richmond-RAS Scale",
+        "abbreviation": "Richmond-RAS Scale",
+        "category": "Pain/Sedation"
+      },
+      {
+        "itemid": 228299,
+        "label": "Goal Richmond-RAS Scale",
+        "abbreviation": "Goal Richmond-RAS Scale",
+        "category": "Pain/Sedation"
+      },
+      {
+        "itemid": 228302,
+        "label": "CAM-ICU RASS LOC",
+        "abbreviation": "CAM-ICU RASS LOC",
+        "category": "Pain/Sedation"
+      },
+      {
+        "itemid": 228473,
+        "label": "Conscious Sedation (Gen Proc)",
+        "abbreviation": "Conscious Sedation (Gen Proc)",
+        "category": "Generic Proc Note"
+      },
+      {
+        "itemid": 228710,
+        "label": "Sedation goal",
+        "abbreviation": "Sedation goal",
+        "category": "MD Progress Note"
+      }
+    ]
+  },
+  {
+    "dataset": "MIMIC-III v1.4",
+    "ich_431_admissions": 1367,
+    "ich_431_432_admissions": 1810,
+    "ich_431_icu_stays": 1468,
+    "ich_431_patients": 1337,
+    "gcs_rows": 162609,
+    "gcs_items": [
+      {
+        "ITEMID": 198,
+        "LABEL": "GCS Total",
+        "ABBREVIATION": null,
+        "CATEGORY": null,
+        "UNITNAME": null
+      },
+      {
+        "ITEMID": 220739,
+        "LABEL": "GCS - Eye Opening",
+        "ABBREVIATION": "Eye Opening",
+        "CATEGORY": "Neurological",
+        "UNITNAME": null
+      },
+      {
+        "ITEMID": 223900,
+        "LABEL": "GCS - Verbal Response",
+        "ABBREVIATION": "Verbal Response",
+        "CATEGORY": "Neurological",
+        "UNITNAME": null
+      },
+      {
+        "ITEMID": 223901,
+        "LABEL": "GCS - Motor Response",
+        "ABBREVIATION": "Motor Response",
+        "CATEGORY": "Neurological",
+        "UNITNAME": null
+      }
+    ],
+    "sedation_items": [
+      {
+        "ITEMID": 628,
+        "LABEL": "Sedation Score",
+        "ABBREVIATION": null,
+        "CATEGORY": null
+      },
+      {
+        "ITEMID": 1090,
+        "LABEL": "Ramsey SedationScale",
+        "ABBREVIATION": null,
+        "CATEGORY": null
+      },
+      {
+        "ITEMID": 3611,
+        "LABEL": "Sedation",
+        "ABBREVIATION": null,
+        "CATEGORY": null
+      },
+      {
+        "ITEMID": 224506,
+        "LABEL": "Conscious sedation (THCEN)",
+        "ABBREVIATION": "Conscious sedation (THCEN)",
+        "CATEGORY": "Thoracentesis"
+      },
+      {
+        "ITEMID": 225531,
+        "LABEL": "Conscious sedation used (Bronch)",
+        "ABBREVIATION": "Conscious sedation used (Bronch)",
+        "CATEGORY": "Bronchoscopy"
+      },
+      {
+        "ITEMID": 228060,
+        "LABEL": "Conscious sedation used (Bronch)",
+        "ABBREVIATION": "Conscious sedation used (Bronch)",
+        "CATEGORY": "Bronchoscopy"
+      },
+      {
+        "ITEMID": 228096,
+        "LABEL": "Richmond-RAS Scale",
+        "ABBREVIATION": "Richmond-RAS Scale",
+        "CATEGORY": "Pain/Sedation"
+      },
+      {
+        "ITEMID": 228299,
+        "LABEL": "Goal Richmond-RAS Scale",
+        "ABBREVIATION": "Goal Richmond-RAS Scale",
+        "CATEGORY": "Pain/Sedation"
+      },
+      {
+        "ITEMID": 228302,
+        "LABEL": "CAM-ICU RASS LOC",
+        "ABBREVIATION": "CAM-ICU RASS LOC",
+        "CATEGORY": "Pain/Sedation"
+      },
+      {
+        "ITEMID": 228473,
+        "LABEL": "Conscious Sedation (Gen Proc)",
+        "ABBREVIATION": "Conscious Sedation (Gen Proc)",
+        "CATEGORY": "Generic Proc Note"
+      }
+    ]
+  },
+  {
+    "dataset": "eICU-CRD v2.0",
+    "ich_text_stays": 781,
+    "ich_icd9_431_stays": 513,
+    "ich_text_or_code_stays": 1285,
+    "gcs_rows": 75073,
+    "gcs_stays": 1062,
+    "diagnosis_examples": [
+      {
+        "icd9code": "431, 431, 431, 431, I61.9",
+        "diagnosisstring": "neurologic|disorders of vasculature|stroke|hemorrhagic stroke|hypertensive",
+        "n": 1845
+      },
+      {
+        "icd9code": "851.80, S06.9",
+        "diagnosisstring": "neurologic|trauma - CNS|intracranial injury|with intracerebral hemorrhage",
+        "n": 1685
+      },
+      {
+        "icd9code": "851.80, S06.9",
+        "diagnosisstring": "burns/trauma|trauma - CNS|intracranial injury|with intracerebral hemorrhage",
+        "n": 1306
+      },
+      {
+        "icd9code": "431, I61.9",
+        "diagnosisstring": "neurologic|disorders of vasculature|stroke|hemorrhagic stroke|hypertensive|cerebellar",
+        "n": 313
+      },
+      {
+        "icd9code": "431, I61.9",
+        "diagnosisstring": "neurologic|disorders of vasculature|stroke|hemorrhagic stroke|hypertensive|thalamus",
+        "n": 308
+      },
+      {
+        "icd9code": "431, I61.9",
+        "diagnosisstring": "neurologic|disorders of vasculature|stroke|hemorrhagic stroke|hypertensive|internal capsule",
+        "n": 136
+      },
+      {
+        "icd9code": "431, I61.9",
+        "diagnosisstring": "neurologic|disorders of vasculature|stroke|hemorrhagic stroke|hypertensive|pons",
+        "n": 46
+      },
+      {
+        "icd9code": "800.10",
+        "diagnosisstring": "burns/trauma|trauma - CNS|fracture of skull|vault|closed|with intracerebral hemorrhage",
+        "n": 18
+      },
+      {
+        "icd9code": "431, 968.5, I61.9, T40.5",
+        "diagnosisstring": "toxicology|drug overdose|cocaine overdose|with CNS hemorrhage",
+        "n": 12
+      },
+      {
+        "icd9code": "800.10",
+        "diagnosisstring": "neurologic|trauma - CNS|fracture of skull|vault|closed|with intracerebral hemorrhage",
+        "n": 5
+      },
+      {
+        "icd9code": "800.60",
+        "diagnosisstring": "neurologic|trauma - CNS|fracture of skull|vault|open|with intracerebral hemorrhage",
+        "n": 3
+      },
+      {
+        "icd9code": "801.10",
+        "diagnosisstring": "burns/trauma|trauma - CNS|fracture of skull|base|closed|with intracerebral hemorrhage",
+        "n": 2
+      },
+      {
+        "icd9code": "801.10",
+        "diagnosisstring": "neurologic|trauma - CNS|fracture of skull|base|closed|with intracerebral hemorrhage",
+        "n": 2
+      },
+      {
+        "icd9code": "800.60",
+        "diagnosisstring": "burns/trauma|trauma - CNS|fracture of skull|vault|open|with intracerebral hemorrhage",
+        "n": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "landmark_hours": 24,
+  "outcome_end_hours": 72,
+  "sequence_hours": 24,
+  "channels": [
+    "gcs_eye",
+    "gcs_verbal",
+    "gcs_motor",
+    "gcs_total",
+    "hr",
+    "rr",
+    "spo2",
+    "sbp",
+    "dbp",
+    "mbp",
+    "temp",
+    "urine_output",
+    "fio2",
+    "rass"
+  ],
+  "channel_labels": {
+    "gcs_eye": "Glasgow Coma Scale eye-opening subscore",
+    "gcs_verbal": "Glasgow Coma Scale verbal-response subscore",
+    "gcs_motor": "Glasgow Coma Scale motor-response subscore",
+    "gcs_total": "Glasgow Coma Scale total score",
+    "hr": "Heart rate",
+    "rr": "Respiratory rate",
+    "spo2": "Peripheral oxygen saturation",
+    "sbp": "Systolic blood pressure",
+    "dbp": "Diastolic blood pressure",
+    "mbp": "Mean blood pressure",
+    "temp": "Body temperature (C)",
+    "urine_output": "Hourly urine output (mL)",
+    "fio2": "Inspired oxygen fraction",
+    "rass": "Richmond Agitation-Sedation Scale"
+  },
+  "outcome_levels": {
+    "0": "Stable",
+    "1": "Moderate confirmed deterioration (GCS decline 2-3)",
+    "2": "Severe confirmed deterioration (GCS decline >=4 or death <=72 h)"
+  },
+  "outcome_name": "Confirmed GCS deterioration or death",
+  "intubation_composite": "Unsupported: sources record intubation timing but not planned versus unplanned status",
+  "primary_baseline_gcs": "maximum total GCS in ICU hours 0-24",
+  "primary_reduction_points": 2,
+  "primary_confirmation_consecutive_hours": 2,
+  "minimum_post_landmark_gcs": 2,
+  "primary_include_early_live_transfer": true,
+  "cv_folds": 5,
+  "cv_repeats": 5,
+  "bootstrap_replicates": 2000,
+  "model_seeds": 5,
+  "parallel_fold_workers": 5,
+  "worker_threads": 3,
+  "parallel_metric_workers": 7,
+  "lambda_grid": [
+    0.0,
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+  ],
+  "lambda_smooth_ratio": 0.4,
+  "lambda_monotone": 0.05,
+  "lambda_smooth": 0.02,
+  "landmark_windows": [6, 24, 48],
+  "primary_landmark_hours": 24,
+  "nested_inner_folds": 5,
+  "stacking_c": 0.1,
+  "stacking_members": ["xgb_summary", "gru", "dggru_tr"],
+  "hyperparameters": {
+    "xgboost": {
+      "search_strategy": "explicit_prespecified_grid",
+      "candidates": [
+        {
+          "n_estimators": 260,
+          "max_depth": 3,
+          "learning_rate": 0.035,
+          "min_child_weight": 3,
+          "subsample": 0.85,
+          "colsample_bytree": 0.8,
+          "reg_lambda": 2.0
+        },
+        {
+          "n_estimators": 420,
+          "max_depth": 2,
+          "learning_rate": 0.025,
+          "min_child_weight": 5,
+          "subsample": 0.8,
+          "colsample_bytree": 0.7,
+          "reg_lambda": 4.0
+        },
+        {
+          "n_estimators": 360,
+          "max_depth": 4,
+          "learning_rate": 0.03,
+          "min_child_weight": 4,
+          "subsample": 0.9,
+          "colsample_bytree": 0.85,
+          "reg_lambda": 3.0
+        }
+      ]
+    },
+    "sequence_models": {
+      "search_strategy": "explicit_prespecified_grid",
+      "candidates": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "learning_rate": 0.001,
+          "weight_decay": 0.0001,
+          "batch_size": 128,
+          "max_epochs": 25,
+          "patience": 6
+        },
+        {
+          "hidden_size": 96,
+          "dropout": 0.3,
+          "learning_rate": 0.0007,
+          "weight_decay": 0.0005,
+          "batch_size": 128,
+          "max_epochs": 25,
+          "patience": 7
+        },
+        {
+          "hidden_size": 48,
+          "dropout": 0.15,
+          "learning_rate": 0.0015,
+          "weight_decay": 0.0001,
+          "batch_size": 64,
+          "max_epochs": 25,
+          "patience": 6
+        }
+      ]
+    },
+    "temporal_regularization": {
+      "lambda_monotone": [0.0, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5],
+      "smooth_to_monotone_ratio": [0.4]
+    },
+    "stacking": {
+      "regularization_c": [0.1],
+      "inner_folds": [5]
+    }
+  },
+  "calibration_thresholds": [0.1, 0.4],
+  "random_seed": 20261024
+}
+

@@ -1,0 +1,116 @@
+{
+  "mimic4": {
+    "dataset": "mimic4",
+    "n": 2673,
+    "grades": {
+      "0": 2031,
+      "1": 243,
+      "2": 399
+    },
+    "deaths_72h": 128,
+    "unique_stays": true,
+    "sequences": [
+      2673,
+      24,
+      14
+    ],
+    "masks": [
+      2673,
+      24,
+      14
+    ],
+    "sequence_ids_match": true,
+    "duplicate_hourly_keys": 0,
+    "post_landmark_leaks": [],
+    "feature_count": 210,
+    "rass_observed": 2456,
+    "rass_missing": 217,
+    "deep_sedation_rass_le_minus3": 924,
+    "endpoint_mismatch": 0,
+    "endpoint_mismatch_stays": [],
+    "endpoint_mismatch_details": [],
+    "primary_followup_complete": 1830,
+    "missing_baseline_gcs": 0,
+    "config": {
+      "landmark_hours": 24,
+      "outcome_end_hours": 72,
+      "sequence_hours": 24
+    }
+  },
+  "mimic3": {
+    "dataset": "mimic3",
+    "n": 1136,
+    "grades": {
+      "0": 756,
+      "1": 123,
+      "2": 257
+    },
+    "deaths_72h": 88,
+    "unique_stays": true,
+    "sequences": [
+      1136,
+      24,
+      14
+    ],
+    "masks": [
+      1136,
+      24,
+      14
+    ],
+    "sequence_ids_match": true,
+    "duplicate_hourly_keys": 0,
+    "post_landmark_leaks": [],
+    "feature_count": 210,
+    "rass_observed": 331,
+    "rass_missing": 805,
+    "deep_sedation_rass_le_minus3": 156,
+    "endpoint_mismatch": 0,
+    "endpoint_mismatch_stays": [],
+    "endpoint_mismatch_details": [],
+    "primary_followup_complete": 709,
+    "missing_baseline_gcs": 0,
+    "config": {
+      "landmark_hours": 24,
+      "outcome_end_hours": 72,
+      "sequence_hours": 24
+    }
+  },
+  "eicu": {
+    "dataset": "eicu",
+    "n": 1725,
+    "grades": {
+      "0": 1315,
+      "1": 156,
+      "2": 254
+    },
+    "deaths_72h": 72,
+    "unique_stays": true,
+    "sequences": [
+      1725,
+      24,
+      14
+    ],
+    "masks": [
+      1725,
+      24,
+      14
+    ],
+    "sequence_ids_match": true,
+    "duplicate_hourly_keys": 0,
+    "post_landmark_leaks": [],
+    "feature_count": 210,
+    "rass_observed": 670,
+    "rass_missing": 1055,
+    "deep_sedation_rass_le_minus3": 210,
+    "endpoint_mismatch": 0,
+    "endpoint_mismatch_stays": [],
+    "endpoint_mismatch_details": [],
+    "primary_followup_complete": 973,
+    "missing_baseline_gcs": 0,
+    "config": {
+      "landmark_hours": 24,
+      "outcome_end_hours": 72,
+      "sequence_hours": 24
+    }
+  }
+}

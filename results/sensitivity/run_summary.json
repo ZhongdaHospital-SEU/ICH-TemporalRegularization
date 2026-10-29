@@ -1,0 +1,483 @@
+{
+  "settings": {
+    "epochs": 25,
+    "folds": 5,
+    "cv_repeats": 1,
+    "replicates": 500,
+    "worker_threads": 2,
+    "workers": 5,
+    "manifest": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\results\\run_manifest_core.json",
+    "datasets": [
+      "eicu",
+      "mimic3",
+      "mimic4"
+    ]
+  },
+  "scheduled_jobs": 39,
+  "unsupported": [
+    {
+      "dataset": "mimic4",
+      "scenario": "s5_with_intubation",
+      "support": "unsupported",
+      "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s8_eicu_gcs_unadjusted",
+      "support": "not_applicable",
+      "reason": "Outline analysis 8 applies only to eicu."
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s8_eicu_gcs_rass_adjusted",
+      "support": "not_applicable",
+      "reason": "Outline analysis 8 applies only to eicu."
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s3_exclude_continuous_sedation",
+      "support": "unsupported",
+      "reason": "Event-level RASS covers only 29.4% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s3_unsedated_only",
+      "support": "unsupported",
+      "reason": "Event-level RASS covers only 29.4% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s5_with_intubation",
+      "support": "unsupported",
+      "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s8_eicu_gcs_unadjusted",
+      "support": "not_applicable",
+      "reason": "Outline analysis 8 applies only to eicu."
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s8_eicu_gcs_rass_adjusted",
+      "support": "not_applicable",
+      "reason": "Outline analysis 8 applies only to eicu."
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s3_exclude_continuous_sedation",
+      "support": "unsupported",
+      "reason": "Event-level RASS covers only 33.3% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s3_unsedated_only",
+      "support": "unsupported",
+      "reason": "Event-level RASS covers only 33.3% of landmark-eligible stays; the prespecified sedation scenarios require at least 80%. Missing RASS cannot be interpreted as no sedation."
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s5_with_intubation",
+      "support": "unsupported",
+      "reason": "Reliable planned versus unplanned intubation after the landmark is unavailable in this source. A procedure start time records intubation but cannot establish that it was unplanned, so the intubation-augmented composite is not substituted with that proxy."
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s8_eicu_gcs_rass_adjusted",
+      "support": "unsupported",
+      "reason": "No complete explicit contemporaneous GCS-RASS adjustment field (gcs_rass_adjusted or adjusted_gcs) is present. Forward-filled hourly RASS is not a valid substitute."
+    }
+  ],
+  "completed": [
+    {
+      "dataset": "mimic4",
+      "scenario": "s3_exclude_continuous_sedation",
+      "analysis_id": "3",
+      "title": "Sedation handling",
+      "returncode": 1,
+      "elapsed_seconds": 7.7,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s3_exclude_continuous_sedation.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s3_exclude_continuous_sedation.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s3_unsedated_only",
+      "analysis_id": "3",
+      "title": "Sedation handling",
+      "returncode": 1,
+      "elapsed_seconds": 698.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s3_unsedated_only.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s3_unsedated_only.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s2_persistence_1h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 3184.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s2_persistence_1h.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s1_baseline_max",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 3203.0,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s1_baseline_max.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s1_baseline_max.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s4_censor_exclude",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 2687.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_exclude.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_exclude.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s2_persistence_2h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 5270.8,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s2_persistence_2h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s2_persistence_2h.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s1_baseline_last",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 5304.1,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s4_censor_grade0",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 3214.7,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_grade0.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_grade0.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s4_censor_ipw",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 3263.3,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_ipw.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s4_censor_ipw.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s5_without_intubation",
+      "analysis_id": "5",
+      "title": "Unplanned intubation in the composite endpoint",
+      "returncode": 0,
+      "elapsed_seconds": 4032.7,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s5_without_intubation.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s5_without_intubation.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s6_landmark_6h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 3346.7,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_6h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_6h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s1_baseline_max",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 1871.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s1_baseline_max.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s1_baseline_max.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s7_exclude_death72h",
+      "analysis_id": "7",
+      "title": "Exclusion of deaths within 72 hours",
+      "returncode": 0,
+      "elapsed_seconds": 3210.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s7_exclude_death72h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s7_exclude_death72h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s1_baseline_last",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 1775.1,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s6_landmark_24h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 5194.5,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_24h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_24h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s2_persistence_1h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 1678.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s2_persistence_1h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s2_persistence_2h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 1657.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s2_persistence_2h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s2_persistence_2h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s4_censor_exclude",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1188.7,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_exclude.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_exclude.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s4_censor_grade0",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1617.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_grade0.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_grade0.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s4_censor_ipw",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1686.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_ipw.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s4_censor_ipw.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s6_landmark_6h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 1134.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_6h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_6h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s5_without_intubation",
+      "analysis_id": "5",
+      "title": "Unplanned intubation in the composite endpoint",
+      "returncode": 0,
+      "elapsed_seconds": 1543.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s5_without_intubation.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s5_without_intubation.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s6_landmark_48h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 6488.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_48h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic4_s6_landmark_48h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s7_exclude_death72h",
+      "analysis_id": "7",
+      "title": "Exclusion of deaths within 72 hours",
+      "returncode": 0,
+      "elapsed_seconds": 1341.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s7_exclude_death72h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s7_exclude_death72h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s6_landmark_24h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 2366.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_24h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_24h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s1_baseline_max",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 1999.1,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s1_baseline_max.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s1_baseline_max.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s1_baseline_last",
+      "analysis_id": "1",
+      "title": "Alternative baseline GCS definition",
+      "returncode": 0,
+      "elapsed_seconds": 1994.8,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s2_persistence_1h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 1978.5,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s2_persistence_1h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s6_landmark_48h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 3633.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_48h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_mimic3_s6_landmark_48h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s4_censor_exclude",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1428.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_exclude.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_exclude.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s2_persistence_2h",
+      "analysis_id": "2",
+      "title": "Alternative persistence threshold",
+      "returncode": 0,
+      "elapsed_seconds": 1912.0,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s2_persistence_2h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s2_persistence_2h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s4_censor_grade0",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1993.3,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_grade0.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_grade0.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s6_landmark_6h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 1272.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_6h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_6h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s4_censor_ipw",
+      "analysis_id": "4",
+      "title": "Early ICU transfer censoring",
+      "returncode": 0,
+      "elapsed_seconds": 1963.0,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_ipw.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s4_censor_ipw.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s5_without_intubation",
+      "analysis_id": "5",
+      "title": "Unplanned intubation in the composite endpoint",
+      "returncode": 0,
+      "elapsed_seconds": 1704.3,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s5_without_intubation.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s5_without_intubation.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s6_landmark_24h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 2133.9,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_24h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_24h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s7_exclude_death72h",
+      "analysis_id": "7",
+      "title": "Exclusion of deaths within 72 hours",
+      "returncode": 0,
+      "elapsed_seconds": 1220.4,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s7_exclude_death72h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s7_exclude_death72h.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s8_eicu_gcs_unadjusted",
+      "analysis_id": "8",
+      "title": "eICU GCS adjustment for RASS",
+      "returncode": 0,
+      "elapsed_seconds": 975.8,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s8_eicu_gcs_unadjusted.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s8_eicu_gcs_unadjusted.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s6_landmark_48h",
+      "analysis_id": "6",
+      "title": "Landmark window",
+      "returncode": 1,
+      "elapsed_seconds": 2327.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_48h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_eicu_s6_landmark_48h.err.log"
+    }
+  ]
+}

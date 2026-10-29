@@ -1,0 +1,60 @@
+{
+  "jobs": [
+    {
+      "dataset": "mimic3",
+      "scenario": "s2_persistence_1h",
+      "returncode": 0,
+      "elapsed_seconds": 1179.5,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic3_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic3_s2_persistence_1h.err.log"
+    },
+    {
+      "dataset": "mimic3",
+      "scenario": "s1_baseline_last",
+      "returncode": 0,
+      "elapsed_seconds": 1223.8,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic3_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic3_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s1_baseline_last",
+      "returncode": 0,
+      "elapsed_seconds": 1365.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_eicu_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_eicu_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "eicu",
+      "scenario": "s2_persistence_1h",
+      "returncode": 0,
+      "elapsed_seconds": 1514.0,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_eicu_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_eicu_s2_persistence_1h.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s1_baseline_last",
+      "returncode": 0,
+      "elapsed_seconds": 1601.5,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s1_baseline_last.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s1_baseline_last.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s3_exclude_continuous_sedation",
+      "returncode": 0,
+      "elapsed_seconds": 1767.1,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s3_exclude_continuous_sedation.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s3_exclude_continuous_sedation.err.log"
+    },
+    {
+      "dataset": "mimic4",
+      "scenario": "s2_persistence_1h",
+      "returncode": 0,
+      "elapsed_seconds": 1857.6,
+      "stdout": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s2_persistence_1h.out.log",
+      "stderr": "D:\\TT paper\\1024 TP Intracerebral Hemorrhage\\work\\logs\\sensitivity_rerun_mimic4_s2_persistence_1h.err.log"
+    }
+  ]
+}
